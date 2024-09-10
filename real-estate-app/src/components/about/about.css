@@ -1,0 +1,56 @@
+.about {
+    margin-bottom: 80px;
+}
+
+.about .heading {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.about p {
+    font-size: 18px;
+    padding-right: 30px;
+    margin-bottom: 20px;
+    line-height: 30px;
+}
+
+@media screen and (max-width:800px) {
+    .back .container {
+        color: #fff;
+        padding: 39px 0;
+    }
+
+    .btn2 {
+        border-radius: 50px;
+        font-size: 15px;
+        margin-bottom: 24px;
+    }
+
+    .about {
+        margin-bottom: 26px;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+/*
+  @media screen and (max-width: 768px) {
+    .about .container {
+      flex-direction: column;
+    }
+    .about p {
+      padding: 0;
+    }
+    .about .container img {
+      margin-top: 50px;
+    }
+  } */

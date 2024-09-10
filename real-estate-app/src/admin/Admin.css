@@ -1,0 +1,55 @@
+Admin Dashboard Custom Styles
+.card-header {
+    background-color: #3c8dbc;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .card-title {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .table {
+    margin-top: 20px;
+  }
+  
+  .table th {
+    background-color: #f4f6f9;
+    font-weight: bold;
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Align and space the action buttons */
+  .icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px; /* Add space between icons */
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+  
+  .icon-btn:last-child {
+    margin-right: 0; /* Remove margin on the last button */
+  }
+  
+  .icon-btn .fa {
+    margin-right: 5px; /* Optional: space between icon and text */
+  }
+  
+  .btn-sm {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+  
+  .table td {
+    vertical-align: middle; /* Ensures icons are centered vertically */
+  }
+  

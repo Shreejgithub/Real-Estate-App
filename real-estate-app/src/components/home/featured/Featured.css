@@ -1,0 +1,34 @@
+.featured .box {
+    border-radius: 6px;
+    text-align: center;
+    padding: 30px;
+    cursor: pointer;
+  }
+  .featured img {
+    width: 30%;
+    height: 64%;
+    cursor: pointer;
+  }
+  
+
+@media screen and (max-width:800px) {
+  .heading h1 {
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 30px;
+    margin-top: -43px;
+}
+
+  .featured img {
+    width: 30%;
+    height: 35%;
+    cursor: pointer;
+  }
+
+  .featured .box {
+    border-radius: 6px;
+    text-align: center;
+    padding: 29px;
+    cursor: pointer;
+  }
+}

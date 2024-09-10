@@ -1,0 +1,145 @@
+/* Container for the entire login form */
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.login-logo{
+  width: 200px;
+}
+
+/* Animation for form appearance */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Title styling */
+.login-container h2 {
+  margin-bottom: 1.5rem;
+  font-size: 26px;
+  color: #343a40;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Form group wrapper */
+.form-group {
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+/* Label styling */
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+  color: #495057;
+}
+
+/* Input field styling */
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #495057;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Focused input field styling */
+.form-group input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+/* Error message styling */
+.error-message {
+  color: #e74c3c;
+  margin-top: 0.5rem;
+  font-size: 12px;
+}
+
+/* Login button styling */
+.login-button {
+  width: 100%;
+  margin-bottom: 21px;
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  background-color: #28a745;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Button hover effect */
+.login-button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+/* Button active effect */
+.login-button:active {
+  background-color: #1e7e34;
+  transform: translateY(0);
+}
+
+/* Login options styling */
+.login-options p {
+  margin-top: 0.5rem;
+  font-size: 14px;
+  color: #6c757d;
+}
+
+/* Login link styling */
+.login-link {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.login-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Responsive styling */
+@media (max-width: 480px) {
+  .login-container {
+    margin-top: 122px;
+    padding: 1.5rem;
+}
+
+  .login-container h2 {
+    font-size: 22px;
+  }
+
+  .form-group input {
+    padding: 0.65rem;
+    font-size: 13px;
+  }
+
+  .login-button {
+    padding: 0.65rem;
+    font-size: 14px;
+  }
+}
