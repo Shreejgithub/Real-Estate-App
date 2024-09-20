@@ -35,6 +35,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import userRoutes from "./routes/userRoute.js";
 import vendorRoutes from "./routes/vendorRoutes.js";  // Import vendor routes
+import adminRoutes from "./routes/adminRoutes.js";
 
 const app = express();
 app.use(bodyParser.json());
@@ -56,3 +57,15 @@ mongoose.connect(URL).then(() => {
 // Routes
 app.use("/api/users", userRoutes);  // User routes
 app.use("/api/vendors", vendorRoutes);  // Vendor routes
+app.use("/api/admins", adminRoutes);   // Admin routes
+
+// 404 Middleware
+app.use((req, res, next) => {
+    res.status(404).json({ message: "Route not found" });
+});
+
+// Global Error Handler
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({ message: "Internal Server Error" });
+});

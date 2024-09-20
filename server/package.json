@@ -11,10 +11,13 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
+    "cloudinary": "^2.5.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "mongoose": "^8.6.1"
+    "gridfs-stream": "^1.1.1",
+    "mongoose": "^8.6.1",
+    "multer": "^1.4.5-lts.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.4"

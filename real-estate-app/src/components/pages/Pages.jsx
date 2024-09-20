@@ -16,6 +16,8 @@ import admin from "../../admin/admin"
 import vendorlist from "../../admin/vendorlist"
 import Admin from "../../admin/admin"
 import vendorReg from "../../vendor/vendorReg"
+import viewDetailAdmin from "../../admin/viewDetailAdmin"
+import AcceptReq from "../../admin/AcceptReq"
 
 const Pages = () => {
   return (
@@ -40,8 +42,11 @@ const Pages = () => {
           <Route exact path='/pricing' component={Pricing} />
           <Route exact path='/contact' component={Contact} />
 
+    <Route path="/accepted-requests" component={AcceptReq} />
+
 
           <Route exact path='/vendorreg' component={vendorReg} />
+          <Route exact path='/viewdetailadmin' component={viewDetailAdmin} />
 
           <Route exact path='/admin' component={admin} />
         </Switch>
