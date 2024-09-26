@@ -85,7 +85,7 @@ const Header = () => {
 
           <div className="button flex">
       <h4 onClick={handleMyListClick} style={{ cursor: 'pointer' }}>
-        <span>2</span>My List
+        <span>2</span>My Cart
       </h4>
       <button className="btn1" onClick={handleLogout}>
         <i className="fa fa-sign-out"></i> Logout

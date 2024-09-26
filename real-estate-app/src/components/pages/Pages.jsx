@@ -19,10 +19,13 @@ import vendorReg from "../../vendor/vendorReg"
 import viewDetailAdmin from "../../admin/viewDetailAdmin"
 import AcceptReq from "../../admin/AcceptReq"
 import fillDetails from "../../vendor/fillDetails"
+import myList from "../common/myList"
+import { CartProvider } from '../../CartContext';
 
 const Pages = () => {
   return (
     <>
+    <CartProvider>
       <Router>
         <Switch>
           <Route exact path='/' component={userlogin} />
@@ -40,6 +43,8 @@ const Pages = () => {
           <Route exact path='/pricing' component={Pricing} />
           <Route exact path='/contact' component={Contact} />
 
+          <Route exact path='/mylist' component={myList} />
+
     <Route path="/accepted-requests" component={AcceptReq} />
 
 
@@ -51,6 +56,7 @@ const Pages = () => {
           <Route exact path='/admin' component={admin} />
         </Switch>
       </Router>
+      </CartProvider>
     </>
   )
 }
