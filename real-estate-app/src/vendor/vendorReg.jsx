@@ -1,30 +1,30 @@
-import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom'; // Import useHistory
-import './vendorReg.css'; // Importing the CSS file
+import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom"; // Import useHistory
+import "./vendorReg.css"; // Importing the CSS file
 
 const VendorReg = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    address: '',
-    propertyType: '',
-    documents: '', // Treat documents as a simple string input field
+    name: "",
+    email: "",
+    address: "",
+    propertyType: "",
+    documents: "", // Treat documents as a simple string input field
   });
 
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
   const history = useHistory(); // Initialize useHistory
 
   useEffect(() => {
     // Check if the admin has been accepted
-    const isAccepted = localStorage.getItem('isAccepted');
-    
+    const isAccepted = localStorage.getItem("isAccepted");
+
     if (isAccepted) {
       // Redirect to "/filldetails" if admin is accepted
-      history.push('/filldetails');
+      history.push("/filldetails");
 
       // Optionally, clear the flag after redirecting
-      localStorage.removeItem('isAccepted');
+      localStorage.removeItem("isAccepted");
     }
   }, [history]);
 
@@ -40,29 +40,37 @@ const VendorReg = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:8001/api/admins/create', {
-        method: 'POST',
+      const response = await fetch("http://localhost:8001/api/admins/create", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json', // Send data as JSON
+          "Content-Type": "application/json", // Send data as JSON
         },
         body: JSON.stringify(formData), // Send form data as a string
       });
 
       if (!response.ok) {
-        throw new Error('Failed to register vendor');
+        throw new Error("Failed to register vendor");
       }
 
       const result = await response.json();
-      console.log('Vendor Registration Successful:', result);
-      setSuccess('Registration successful!');
-      setError(''); // Clear any previous errors
+      console.log("Vendor Registration Successful:", result);
+      setSuccess("Registration successful!");
+      setError(""); // Clear any previous errors
 
       // Redirect to ViewDetailAdmin after registration
       // history.push('/viewdetails'); // Use history.push for redirection
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error("Error submitting form:", error);
       setError(`Failed to register vendor: ${error.message}`);
     }
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0]; // Get the first selected file
+    setFormData({
+      ...formData,
+      documents: file, // Store the file object in formData
+    });
   };
 
   return (
@@ -121,15 +129,13 @@ const VendorReg = () => {
         <div className="form-group">
           <label>Documents</label>
           <input
-            type="text"
+            type="file" // Change input type to "file"
             name="documents"
-            value={formData.documents}
-            onChange={handleChange}
-            placeholder="Enter document details"
-            required
+            onChange={handleFileChange} // Add file change handler
           />
         </div>
-        <button type="submit" className="register-btn">
+
+        <button type="submit" className="register-btn" onChange={handleFileChange}>
           Register
         </button>
       </form>

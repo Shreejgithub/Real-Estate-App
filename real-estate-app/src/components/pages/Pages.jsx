@@ -18,15 +18,13 @@ import Admin from "../../admin/admin"
 import vendorReg from "../../vendor/vendorReg"
 import viewDetailAdmin from "../../admin/viewDetailAdmin"
 import AcceptReq from "../../admin/AcceptReq"
+import fillDetails from "../../vendor/fillDetails"
 
 const Pages = () => {
   return (
     <>
       <Router>
         <Switch>
-          {/* <Route path="/user-dashboard" component={UserDashboard} />
-        <Route path="/admin-dashboard" component={AdminDashboard} />
-        <Route path="/vendor-dashboard" component={VendorDashboard} /> */}
           <Route exact path='/' component={userlogin} />
           <Route exact path='/userregisteration' component={UserRegistration} />
           <Route exact path='/adminlogin' component={AdminLogin} />
@@ -46,6 +44,8 @@ const Pages = () => {
 
 
           <Route exact path='/vendorreg' component={vendorReg} />
+          <Route exact path='/filldetails' component={fillDetails} />
+
           <Route exact path='/viewdetailadmin' component={viewDetailAdmin} />
 
           <Route exact path='/admin' component={admin} />

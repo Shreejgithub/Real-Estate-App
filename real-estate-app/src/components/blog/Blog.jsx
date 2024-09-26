@@ -1,10 +1,11 @@
 import React from 'react'
 import Back from '../common/Back'
 import img from '../images/about.jpg'
-import RecentCard from '../home/recent/RecentCard'
+// import RecentCard from '../home/recent/RecentCard'
 import Footer from '../common/footer/Footer'
 import ScrollToTop from '../ScrollToTop'
 import Header from '../common/header/Header'
+import RecentCard from '../home/recent/RecentCard'
 
 const Blog = () => {
   return (
@@ -13,6 +14,7 @@ const Blog = () => {
     <section className='blog-out md'>
         <Back name="Blogs" title=" Blogs - All Blogs" cover={img}/>
         <div className="container recent">
+            {/* <RecentCard /> */}
             <RecentCard />
         </div>
     </section>
