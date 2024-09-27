@@ -77,7 +77,7 @@
   }
   
   .remove-btn {
-    background-color: #ff0000; /* Red background for the remove button */
+    background-color: #451171; /* Red background for the remove button */
     color: #fff;
     padding: 5px 10px;
     border: none;
@@ -87,6 +87,48 @@
   }
   
   .remove-btn:hover {
-    background-color: #e60000; /* Darker red on hover */
+    background-color: #270a3f; /* Darker red on hover */
   }
-  
+
+/* Cart item container - ensure positioning is relative */
+.cart-item {
+  position: relative; /* So the remove icon is positioned within this card */
+  padding: 20px;
+  background-color: #fff; /* Card background color */
+  /* Other styles for the cart item */
+  border-radius: 10px; /* Rounded corners for the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Cross icon styles - stick to the top right corner */
+.remove-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #ff4d4d; /* Bright red color for the icon */
+  cursor: pointer;
+  font-weight: bold;
+  background-color: white; /* Same as card's background color */
+  width: 35px; /* Make the background circular */
+  height: 35px; /* Equal width and height for a circle */
+  display: flex; /* Center the icon inside the circle */
+  align-items: center; /* Vertical centering */
+  justify-content: center; /* Horizontal centering */
+  border-radius: 50%; /* Circular background */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add slight shadow for emphasis */
+}
+
+/* Hover effect */
+.remove-icon:hover {
+  background-color: #ff4d4d; /* Solid red background on hover */
+  color: white; /* White cross on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Active state (when clicked) */
+.remove-icon:active {
+  transform: scale(0.95); /* Slightly shrink when clicked */
+}
+

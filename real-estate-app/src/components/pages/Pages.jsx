@@ -21,6 +21,7 @@ import AcceptReq from "../../admin/AcceptReq"
 import fillDetails from "../../vendor/fillDetails"
 import myList from "../common/myList"
 import { CartProvider } from '../../CartContext';
+import ViewProperty from "../common/viewProperty"
 
 const Pages = () => {
   return (
@@ -44,6 +45,7 @@ const Pages = () => {
           <Route exact path='/contact' component={Contact} />
 
           <Route exact path='/mylist' component={myList} />
+          <Route path="/property/:id" component={ViewProperty} /> {/* New route for property view */}
 
     <Route path="/accepted-requests" component={AcceptReq} />
 
