@@ -16,6 +16,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "./viewProperty.css";
 import Header from "./header/Header";
+import axios from "axios";
 
 const ViewProperty = () => {
   const location = useLocation();
@@ -51,9 +52,28 @@ const ViewProperty = () => {
 
   const truncatedText = fullText.split(". ").slice(0, 3).join(". ") + ".";
 
+  const buyfunction = async () => {
+    try {
+      // Sending the property name to the backend for Stripe product creation
+      const response = await axios.post('http://localhost:8001/payment', {
+        name: name,  // Sending property name in the request body
+        price: price,
+      });
+  
+      if (response && response.status === 200) {
+        // Redirect to the Stripe checkout session URL
+        window.location.href = response.data.url;
+      }
+    } catch (error) {
+      console.error("Payment error:", error);
+      alert("Something went wrong with the payment. Please try again.");
+    }
+  };
+  
+  
   return (
     <>
-      <Header />
+    <Header />
       <div className="view-property-page">
         <h1 className="page-title">View Your Property</h1>
         <div className="jumbotron" style={{ backgroundImage: `url(${cover})` }}>
@@ -62,24 +82,14 @@ const ViewProperty = () => {
         <div className="property-info">
           <div className="info-column">
             <h3>Property Details</h3>
-            <p>
-              <strong>Category:</strong> {category}
-            </p>
-            <p>
-              <strong>Location:</strong> {propertyLocation}
-            </p>
-            <p>
-              <strong>Price:</strong> {price} /sqft
-            </p>
-            <p>
-              <strong>Type:</strong> {type}
-            </p>
+            <p><strong>Category:</strong> {category}</p>
+            <p><strong>Location:</strong> {propertyLocation}</p>
+            <p><strong>Price:</strong> {price} /sqft</p>
+            <p><strong>Type:</strong> {type}</p>
           </div>
           <div className="about-home">
             <h3>About This Property</h3>
-            <p
-              className={`about-text ${isExpanded ? "expanded" : "collapsed"}`}
-            >
+            <p className={`about-text ${isExpanded ? "expanded" : "collapsed"}`}>
               {isExpanded ? fullText : truncatedText}
             </p>
             <button className="toggle-button" onClick={toggleText}>
@@ -101,69 +111,49 @@ const ViewProperty = () => {
             <div className="info-row">
               <div className="info-item">
                 <FontAwesomeIcon icon={faClock} />
-                <span>
-                  <strong>7 hours on QuickHomes</strong>
-                </span>
+                <span><strong>7 hours on QuickHomes</strong></span>
               </div>
               <div className="info-item">
                 <FontAwesomeIcon icon={faBuilding} />
-                <span>
-                  <strong>{type}</strong>
-                </span>
+                <span><strong>{type}</strong></span>
               </div>
               <div className="info-item">
                 <FontAwesomeIcon icon={faCalendar} />
-                <span>
-                  <strong>Built in 2005</strong>
-                </span>
+                <span><strong>Built in 2005</strong></span>
               </div>
               <div className="info-item">
                 <FontAwesomeIcon icon={faDollarSign} />
-                <span>
-                  <strong>${price} per sq ft</strong>
-                </span>
+                <span><strong>${price} per sq ft</strong></span>
               </div>
               <div className="info-item">
                 <FontAwesomeIcon icon={faHome} />
-                <span>
-                  <strong>$160 monthly HOA fee</strong>
-                </span>
+                <span><strong>$160 monthly HOA fee</strong></span>
               </div>
               <div className="info-item">
                 <FontAwesomeIcon icon={faParking} />
-                <span>
-                  <strong>1 parking space</strong>
-                </span>
+                <span><strong>1 parking space</strong></span>
               </div>
               <div className="info-item">
                 <FontAwesomeIcon icon={faSnowflake} />
-                <span>
-                  <strong>Has A/C</strong>
-                </span>
+                <span><strong>Has A/C</strong></span>
               </div>
               <div className="info-item">
                 <FontAwesomeIcon icon={faHome} />
-                <span>
-                  <strong>In-unit laundry (washer and dryer)</strong>
-                </span>
+                <span><strong>In-unit laundry (washer and dryer)</strong></span>
               </div>
               <div className="info-item">
                 <FontAwesomeIcon icon={faPercent} />
-                <span>
-                  <strong>2.5% buyer's agent fee</strong>
-                </span>
+                <span><strong>2.5% buyer's agent fee</strong></span>
               </div>
               <div className="info-item">
                 <FontAwesomeIcon icon={faMapMarkerAlt} />
-                <span>
-                  <strong>{propertyLocation}</strong>
-                </span>
+                <span><strong>{propertyLocation}</strong></span>
               </div>
             </div>
           </div>
           <br />
           <div className="buy-button-container">
-            <button className="buy-button">Buy Now</button>
+            <button className="buy-button" onClick={buyfunction}>Buy Now</button>
           </div>
         </div>
       </div>

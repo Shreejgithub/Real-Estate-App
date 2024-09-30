@@ -1,0 +1,36 @@
+/* success.css */
+.success-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #f0f8ff; /* Light background color */
+    color: #333; /* Dark text color */
+    text-align: center;
+  }
+  
+  .success-title {
+    font-size: 36px; /* Larger font for the title */
+    font-weight: bold;
+    margin-bottom: 20px; /* Space below the title */
+  }
+  
+  .success-message {
+    font-size: 18px; /* Regular font size for the message */
+    margin-bottom: 30px; /* Space below the message */
+  }
+  
+  .success-button {
+    padding: 10px 20px; /* Button padding */
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for hover */
+  }
+  
+  .success-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  

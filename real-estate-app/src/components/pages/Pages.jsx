@@ -22,6 +22,8 @@ import fillDetails from "../../vendor/fillDetails"
 import myList from "../common/myList"
 import { CartProvider } from '../../CartContext';
 import ViewProperty from "../common/viewProperty"
+import success from "../common/success"
+import cancel from "../common/cancel"
 
 const Pages = () => {
   return (
@@ -56,6 +58,9 @@ const Pages = () => {
           <Route exact path='/viewdetailadmin' component={viewDetailAdmin} />
 
           <Route exact path='/admin' component={admin} />
+
+          <Route exact path='/success' component={success} />
+          <Route exact path='/cancel' component={cancel} />
         </Switch>
       </Router>
       </CartProvider>

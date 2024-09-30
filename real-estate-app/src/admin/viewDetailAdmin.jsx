@@ -204,6 +204,31 @@ const ViewDetailAdmin = () => {
 
   // Handle Accept (Authenticate Admin)
 // Handle Accept button click in ViewDetailAdmin.jsx
+// const handleAccept = async (adminId) => {
+//   try {
+//     // Update the vendor status to "accepted"
+//     const response = await fetch(`http://localhost:8001/api/admins/update/${adminId}`, {
+//       method: 'PUT',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify({ status: 'accepted' }),
+//     });
+
+//     if (!response.ok) {
+//       throw new Error('Failed to accept vendor');
+//     }
+
+//     // Optionally, you can redirect or show a success message
+//     setAdminData(adminData.map(admin => 
+//       admin._id === adminId ? { ...admin, status: 'accepted' } : admin
+//     ));
+//   } catch (err) {
+//     setError('Failed to accept vendor');
+//   }
+// };
+
+// Update handleAccept function to set the localStorage flag after successful acceptance
 const handleAccept = async (adminId) => {
   try {
     // Update the vendor status to "accepted"
@@ -212,21 +237,30 @@ const handleAccept = async (adminId) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ status: 'accepted' }),
+      body: JSON.stringify({ status: 'accepted', isAuthenticated: true }), // Add isAuthenticated flag
     });
 
     if (!response.ok) {
       throw new Error('Failed to accept vendor');
     }
 
-    // Optionally, you can redirect or show a success message
+    // Update the local state to reflect the accepted status
     setAdminData(adminData.map(admin => 
-      admin._id === adminId ? { ...admin, status: 'accepted' } : admin
+      admin._id === adminId ? { ...admin, status: 'accepted', isAuthenticated: true } : admin
     ));
+
+    // Set the localStorage flag to indicate the admin has been authenticated
+    localStorage.setItem("isAuthenticated", true);
+
+    // Optionally, display a success message
+    setError(''); // Clear any previous error
   } catch (err) {
     setError('Failed to accept vendor');
   }
 };
+
+
+
 
 
   return (

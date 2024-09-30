@@ -11,20 +11,80 @@ const VendorReg = () => {
     documents: "", // Treat documents as a simple string input field
   });
 
+  // const [error, setError] = useState("");
+  // const [success, setSuccess] = useState("");
+  // const history = useHistory(); // Initialize useHistory
+
+  // useEffect(() => {
+  //   // Check if the admin has been accepted
+  //   const isAccepted = localStorage.getItem("isAccepted");
+
+  //   if (isAccepted) {
+  //     // Redirect to "/filldetails" if admin is accepted
+  //     history.push("/filldetails");
+
+  //     // Optionally, clear the flag after redirecting
+  //     localStorage.removeItem("isAccepted");
+  //   }
+  // }, [history]);
+
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData({
+  //     ...formData,
+  //     [name]: value,
+  //   });
+  // };
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   try {
+  //     const response = await fetch("http://localhost:8001/api/admins/create", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json", // Send data as JSON
+  //       },
+  //       body: JSON.stringify(formData), // Send form data as a string
+  //     });
+
+  //     if (!response.ok) {
+  //       throw new Error("Failed to register vendor");
+  //     }
+
+  //     const result = await response.json();
+  //     console.log("Vendor Registration Successful:", result);
+  //     setSuccess("Registration successful!");
+  //     setError(""); // Clear any previous errors
+
+  //     // Redirect to ViewDetailAdmin after registration
+  //     // history.push('/viewdetails'); // Use history.push for redirection
+  //   } catch (error) {
+  //     console.error("Error submitting form:", error);
+  //     setError(`Failed to register vendor: ${error.message}`);
+  //   }
+  // };
+
+  // const handleFileChange = (e) => {
+  //   const file = e.target.files[0]; // Get the first selected file
+  //   setFormData({
+  //     ...formData,
+  //     documents: file, // Store the file object in formData
+  //   });
+  // };
+
+
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const history = useHistory(); // Initialize useHistory
 
   useEffect(() => {
-    // Check if the admin has been accepted
-    const isAccepted = localStorage.getItem("isAccepted");
+    // Check if the admin has been authenticated (using isAuthenticated flag)
+    const isAuthenticated = localStorage.getItem("isAuthenticated");
 
-    if (isAccepted) {
-      // Redirect to "/filldetails" if admin is accepted
+    if (isAuthenticated === "true") {
+      // Redirect to "/filldetails" if admin is authenticated
       history.push("/filldetails");
-
-      // Optionally, clear the flag after redirecting
-      localStorage.removeItem("isAccepted");
     }
   }, [history]);
 
@@ -57,8 +117,6 @@ const VendorReg = () => {
       setSuccess("Registration successful!");
       setError(""); // Clear any previous errors
 
-      // Redirect to ViewDetailAdmin after registration
-      // history.push('/viewdetails'); // Use history.push for redirection
     } catch (error) {
       console.error("Error submitting form:", error);
       setError(`Failed to register vendor: ${error.message}`);
@@ -72,6 +130,7 @@ const VendorReg = () => {
       documents: file, // Store the file object in formData
     });
   };
+
 
   return (
     <div className="form-container">

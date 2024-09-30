@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./header.css";
 import { Link, useHistory } from "react-router-dom";
 import { nav } from "../../data/Data";
 import { auth } from "../../login/firebase";
 import { signOut } from "firebase/auth";
 import Swal from "sweetalert2";
+import { CartContext } from "../../../CartContext";
 
 
 
 const Header = () => {
   const [navList, setNavList] = useState(false);
   const history = useHistory(); // To navigate after logout
+  const { cartCount } = useContext(CartContext); // Get cart count from context
+
 
   useEffect(() => {
     // Inject custom CSS for SweetAlert2
@@ -84,9 +87,9 @@ const Header = () => {
           </div>
 
           <div className="button flex">
-      <h4 onClick={handleMyListClick} style={{ cursor: 'pointer' }}>
-        <span>2</span>My Cart
-      </h4>
+          <h4 onClick={handleMyListClick} style={{ cursor: 'pointer' }}>
+            <span>{cartCount}</span> My Cart
+          </h4>
       <button className="btn1" onClick={handleLogout}>
         <i className="fa fa-sign-out"></i> Logout
       </button>

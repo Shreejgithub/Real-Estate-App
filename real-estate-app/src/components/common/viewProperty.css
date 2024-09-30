@@ -1,224 +1,145 @@
-.property-details-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  .property-image-container {
-    width: 100%;
-    max-width: 800px;
-    margin-bottom: 20px;
-  }
-  
-  .property-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  .property-info {
-    text-align: left;
-    max-width: 800px;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .property-info h2 {
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  .property-info p {
-    margin: 5px 0;
-    font-size: 18px;
-    color: #555;
-  }
-  
-  .property-info strong {
-    color: #000;
-  }
 /* General page styles */
 .view-property-page {
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    padding: 20px;
-    background-color: #f9f9f9;
-  }
-  
-  /* Page title */
-  .page-title {
-    font-size: 36px;
-    text-align: center;
-    color: #444;
-    margin-bottom: 20px;
-  }
-  
-  /* Jumbotron styles */
-  .jumbotron {
-    height: 400px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    padding: 20px;
-    color: white;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-  }
-  
-  /* Property name style */
-  .property-name {
-    font-size: 32px;
-    margin: 0;
-  }
-  
-  /* Property info section */
-  .property-info {
-    max-width: 1100px;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Info column styles */
-  .info-column {
-    margin-bottom: 20px;
-  }
-  
-  .info-column h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .info-column p {
-    font-size: 16px;
-    margin: 5px 0;
-  }
-  
-  /* About this home section */
-  .about-home {
-    background-color: #f1f1f1;
-    padding: 15px;
-    border-radius: 8px;
-    margin-top: 20px;
-  }
-  
-  .about-home h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
-  .about-home p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #555;
-  }
-  .additional-info {
-    margin-top: 20px; /* Add space above */
-  }
-  
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  padding: 20px;
+  background-color: #f0f4f7;
+}
+
+/* Page title */
+.page-title {
+  font-size: 36px;
+  text-align: center;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+/* Jumbotron styles */
+.jumbotron {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 20px;
+  color: white;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+}
+
+.property-name {
+  font-size: 40px;
+  margin: 0;
+  text-align: center;
+}
+
+/* Property info section */
+.property-info {
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Info column styles */
+.info-column h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #2a9d8f;
+}
+
+.info-column p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+/* About this home section */
+.about-home {
+  background-color: #f7fafc;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.about-home h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #2a9d8f;
+}
+
+.about-home p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Additional information */
+.additional-info {
+  margin-top: 20px;
+}
+
+.info-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+}
+
+.info-item svg {
+  color: #2a9d8f;
+  margin-right: 10px;
+}
+
+/* Show More/Less button */
+.toggle-button {
+  background-color: #2a9d8f;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-button:hover {
+  background-color: #21867a;
+}
+
+/* Buy Now button */
+.buy-button-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.buy-button {
+  background-color: #e63946;
+  color: #fff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+  background-color: #d82e3b;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
   .info-row {
-    display: grid; /* Use grid for the two-column layout */
-    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
-    gap: 20px; /* Space between grid items */
-    margin-bottom: 10px; /* Space below the grid */
+    grid-template-columns: 1fr;
   }
-  
-  .info-item {
-    display: flex; /* Flex for icon and text alignment */
-    align-items: center; /* Center vertically */
-  }
-  
-  .info-item span {
-    margin-left: 8px; /* Space between icon and text */
-  }
-  
-  .info-item svg {
-    color: #25b579; /* Icon color */
-    width: 20px; /* Icon width */
-    height: 20px; /* Icon height */
-  }
-
-  .toggle-button {
-    background-color: #25b579; /* Button background color */
-    color: #ffffff; /* Text color */
-    border: none; /* Remove default border */
-    border-radius: 25px; /* Rounded corners */
-    padding: 10px 20px; /* Padding for a comfortable click area */
-    font-size: 16px; /* Font size */
-    font-weight: 600; /* Bold text */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
-    display: flex; /* Flex for alignment */
-    align-items: center; /* Center icon and text vertically */
-  }
-  
-  .toggle-button:hover {
-    background-color: #15704a; /* Darker background on hover */
-    transform: scale(1.05); /* Slight scale effect on hover */
-  }
-  
-  .toggle-button:focus {
-    outline: none; /* Remove outline on focus */
-  }
-  
-  .toggle-button svg {
-    margin-right: 8px; /* Space between icon and text */
-    font-size: 18px; /* Adjust icon size */
-  }
-
-  .buy-button-container {
-    display: flex;
-    justify-content: center; /* Center the button horizontally */
-    margin: 20px 0; /* Space above and below the button */
-  }
-  
-  .buy-button {
-    background-color: #28a745; /* Green background color */
-    color: #ffffff; /* White text color */
-    border: none; /* Remove border */
-    border-radius: 25px; /* Rounded corners */
-    padding: 12px 30px; /* Comfortable padding */
-    font-size: 18px; /* Font size */
-    font-weight: bold; /* Bold text */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Transition effects */
-  }
-  
-  .buy-button:hover {
-    background-color: #218838; /* Darker green on hover */
-    transform: scale(1.05); /* Slightly larger on hover */
-  }
-  
-  .buy-button:focus {
-    outline: none; /* Remove outline on focus */
-  }
-  
-  
-  
-  /* Responsive design */
-  @media (max-width: 768px) {
-    .jumbotron {
-      height: 250px;
-    }
-  
-    .property-name {
-      font-size: 24px;
-    }
-  
-    .property-info {
-      padding: 15px;
-    }
-  
-    .info-column h3,
-    .about-home h3,
-    .additional-info h3 {
-      font-size: 18px;
-    }
-  }
-  
+}

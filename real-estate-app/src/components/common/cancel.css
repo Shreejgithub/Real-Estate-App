@@ -1,0 +1,36 @@
+/* cancel.css */
+.cancel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #ffe6e6; /* Light red background color */
+    color: #333; /* Dark text color */
+    text-align: center;
+  }
+  
+  .cancel-title {
+    font-size: 36px; /* Larger font for the title */
+    font-weight: bold;
+    margin-bottom: 20px; /* Space below the title */
+  }
+  
+  .cancel-message {
+    font-size: 18px; /* Regular font size for the message */
+    margin-bottom: 30px; /* Space below the message */
+  }
+  
+  .cancel-button {
+    padding: 10px 20px; /* Button padding */
+    background-color: #f44336; /* Red background */
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for hover */
+  }
+  
+  .cancel-button:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+  }
+  
